@@ -96,7 +96,7 @@ ul {
   list-style: none;
   text-transform: uppercase;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 a {
   display: flex;
