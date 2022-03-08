@@ -3,46 +3,14 @@
     <div class="banner_blu">
       <div class="banner_items">
         <ul>
-          <li>
-            <a href="#">
+          <li v-for="(link, i) in links" :key="i">
+            <a :href="link.href">
               <div class="img_banner">
-                <img src="../assets/img/buy-comics-digital-comics.png" alt="" />
+                <img :src="require('../assets/img/' + link.imgUrl)" />
               </div>
-              <h4>Digital Comics</h4>
+              <h4>{{ link.text }}</h4>
             </a>
-          </li>
-          <li>
-            <a href="#">
-              <div class="img_banner">
-                <img src="../assets/img/buy-comics-merchandise.png" alt="" />
-              </div>
-              <h4>Dc Merchandise</h4>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <div class="img_banner">
-                <img src="../assets/img/buy-comics-subscriptions.png" alt="" />
-              </div>
-              <h4>Subscriptions</h4>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <div class="img_banner">
-                <img src="../assets/img/buy-comics-shop-locator.png" alt="" />
-              </div>
-              <h4>Comic Shop Locator</h4>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <div class="img_banner">
-                <img src="../assets/img/buy-dc-power-visa.png" alt="" />
-              </div>
-              <h4>Dc Power Visa</h4>
-            </a>
-          </li>
+          </li>                            
         </ul>
       </div>
     </div>
@@ -51,7 +19,40 @@
 
 // JS script Vue
 <script>
-export default {};
+export default {
+  name: "MyBannerBlu",
+  data() {
+    return {
+      links: [
+        {
+          href: "#",
+          imgUrl: "buy-comics-digital-comics.png",
+          text: "Digital Comics",
+        },
+        {
+          href: "#",
+          imgUrl: "buy-comics-merchandise.png",
+          text: "Dc Merchandise",
+        },
+        {
+          href: "#",
+          imgUrl: "buy-comics-subscriptions.png",
+          text: "Subscriptions",
+        },
+        {
+          href: "#",
+          imgUrl: "buy-comics-shop-locator.png",
+          text: "Comic Shop Location",
+        },
+        {
+          href: "#",
+          imgUrl: "buy-dc-power-visa.png",
+          text: "Dc Power Visa",
+        },
+      ],
+    };
+  },
+};
 </script>
 
 // Style CSS
@@ -80,7 +81,9 @@ export default {};
 .img_banner {
   margin-right: 10px;
   height: 55px;
-  width: 43px;
+  width: 44px;
+  display: flex;
+  align-items: center;
 }
 img {
   width: 100%;

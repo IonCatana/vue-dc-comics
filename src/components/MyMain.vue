@@ -2,14 +2,27 @@
 <template>
   <div id="app">
     <div class="contents">
-      <h1>Contents goes here</h1>
-    </div>      
+      <h1 v-for="(link, i) in links" :key="i">
+        {{ link.text }}
+      </h1>
+    </div>
   </div>
 </template>
 
 // JS script Vue
 <script>
-export default {};
+export default {
+  name: "MyMain",
+  data() {
+    return {
+      links: [
+        {
+          text: "--> Contents goes here <--",
+        },       
+      ],
+    };
+  },
+};
 </script>
 
 // Style CSS
@@ -23,5 +36,4 @@ export default {};
   width: 70%;
   margin: 0 auto;
 }
-
 </style>
