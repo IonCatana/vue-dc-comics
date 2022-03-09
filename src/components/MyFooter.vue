@@ -38,6 +38,9 @@
         <div class="side_right"></div>
       </div>
     </div>
+    <div class="footer_navbar">
+
+    </div>
   </div>
 </template>
 
