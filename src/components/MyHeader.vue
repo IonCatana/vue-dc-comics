@@ -8,7 +8,7 @@
       <div class="nav_bar">
         <ul>
           <li v-for="(link, i) in links" :key="i">
-            <a :href="link.href">{{ link.text }}</a>
+            <a :href="link.href" :class=" link.active ? 'active' : ''">{{ link.text }} </a>
           </li>
         </ul>
       </div>
@@ -30,6 +30,7 @@ export default {
         {
           text: "Comics",
           href: "#",
+          active: true,
         },
         {
           text: "Movies",
@@ -82,6 +83,7 @@ img {
   height: 80px;
 }
 .header {
+  padding: 10px 0px 10px 0px;
   width: 70%;
   margin: 0 auto;
   display: flex;
@@ -104,7 +106,7 @@ a {
   &:hover {
     color: blue;
     border-bottom: 4px solid blue;
-    padding: 0px 0px 50px;
+    padding: 0px 0px 38px;
   }
   &:active {
     color: red;
